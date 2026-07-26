@@ -133,29 +133,20 @@
   .hero-attendant .who b{display:block; font-size:.92rem;}
   .hero-attendant .who span{font-size:.78rem; color:var(--text-onink-dim);}
 
-  .tire-wrap{
-    position:relative; width:min(320px,78vw); aspect-ratio:1; margin-inline:auto;
-  }
-  .tire-wrap::before{
-    content:""; position:absolute; inset:-14%; border-radius:50%; z-index:0;
-    background:radial-gradient(circle, rgba(225,29,46,.4), transparent 68%);
-    filter:blur(4px);
-    animation: tireGlowPulse 2.6s ease-in-out infinite;
-  }
-  .tire-svg{position:relative; z-index:1; width:100%; height:100%; display:block;
-    filter:drop-shadow(0 24px 40px rgba(0,0,0,.55));
-  }
-  .tire-spin{transform-box:fill-box; transform-origin:50% 50%; animation: spin 22s linear infinite;}
-  @media (prefers-reduced-motion: reduce){ .tire-spin{animation:none;} .tire-wrap::before{animation:none;} }
-  @keyframes spin{ to{ transform:rotate(360deg);} }
-  @keyframes tireGlowPulse{ 0%,100%{opacity:.55; transform:scale(.95);} 50%{opacity:1; transform:scale(1.06);} }
-
-  .hero-visual{display:flex; align-items:center; justify-content:center; gap:1.4rem; flex-wrap:wrap;}
+  .hero-visual{display:flex; align-items:center; justify-content:center;}
   .hero-photo{
-    width:min(200px,42vw); aspect-ratio:3/4; border-radius:.9rem; overflow:hidden;
+    position:relative; width:min(360px,82vw); aspect-ratio:4/5; border-radius:1rem; overflow:hidden;
     border:1px solid var(--line-dark); box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
   }
+  .hero-photo::before{
+    content:""; position:absolute; inset:-16%; z-index:-1; border-radius:1.4rem;
+    background:radial-gradient(circle, rgba(225,29,46,.4), transparent 68%);
+    filter:blur(6px);
+    animation: photoGlowPulse 2.6s ease-in-out infinite;
+  }
   .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  @media (prefers-reduced-motion: reduce){ .hero-photo::before{animation:none;} }
+  @keyframes photoGlowPulse{ 0%,100%{opacity:.55; transform:scale(.96);} 50%{opacity:1; transform:scale(1.04);} }
 
   /* ---------- diferenciais strip ---------- */
   .facts{
@@ -316,38 +307,6 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="tire-wrap">
-        <svg class="tire-svg" viewBox="0 0 200 200" role="img" aria-label="Ilustração de pneu e roda">
-          <defs>
-            <radialGradient id="rimGrad" cx="35%" cy="30%" r="75%">
-              <stop offset="0%" stop-color="#f2f4f5"/>
-              <stop offset="45%" stop-color="#c3c8cd"/>
-              <stop offset="100%" stop-color="#6b7075"/>
-            </radialGradient>
-            <radialGradient id="hubGrad" cx="35%" cy="30%" r="75%">
-              <stop offset="0%" stop-color="#ff5b68"/>
-              <stop offset="100%" stop-color="#a11421"/>
-            </radialGradient>
-          </defs>
-          <g class="tire-spin">
-            <circle cx="100" cy="100" r="94" fill="#0b0c0d"/>
-            <circle cx="100" cy="100" r="86" fill="none" stroke="#2b2e31" stroke-width="16" stroke-dasharray="7 6"/>
-            <circle cx="100" cy="100" r="74" fill="none" stroke="var(--red)" stroke-width="2.5"/>
-            <circle cx="100" cy="100" r="70" fill="url(#rimGrad)"/>
-            <g fill="#52585e">
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(0 100 100)"/>
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(60 100 100)"/>
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(120 100 100)"/>
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(180 100 100)"/>
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(240 100 100)"/>
-              <rect x="93" y="34" width="14" height="38" rx="6" transform="rotate(300 100 100)"/>
-            </g>
-            <circle cx="100" cy="100" r="34" fill="#1a1b1d" stroke="#3a3d40" stroke-width="2"/>
-            <circle cx="100" cy="100" r="20" fill="url(#hubGrad)" stroke="#0b0c0d" stroke-width="2"/>
-            <text x="100" y="104" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="11" fill="#fff">MP</text>
-          </g>
-        </svg>
-      </div>
       <div class="hero-photo"><img src="img/atila-hero.jpg" alt="Atila, da Messejana Pneus"></div>
     </div>
   </div>
