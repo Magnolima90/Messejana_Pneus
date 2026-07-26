@@ -245,15 +245,34 @@
   .faq-item p{padding-bottom:1.1rem; font-size:.92rem; color:var(--text-onpaper-dim); max-width:60ch;}
 
   /* ---------- location ---------- */
-  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-dark); border:1px solid var(--line-dark);}
-  @media (max-width:820px){ .loc-grid{grid-template-columns:1fr;} }
-  .loc-panel{background:var(--surface); padding:1.8rem;}
-  .loc-panel h3{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--steel); margin-bottom:.7rem;}
-  .loc-row{display:flex; justify-content:space-between; padding:.5rem 0; border-bottom:1px solid var(--line-dark); font-size:.92rem;}
-  .loc-row:last-child{border-bottom:none;}
-  .loc-row span:last-child{font-family:var(--font-mono); font-variant-numeric:tabular-nums; color:var(--text-onink-dim);}
-  .loc-photo{margin-bottom:1.5rem; max-width:460px; margin-inline:auto;}
-  .loc-photo img{width:100%; display:block;}
+  .loc-wrap{display:grid; grid-template-columns:minmax(260px,340px) 1fr; gap:2.2rem; align-items:stretch;}
+  @media (max-width:820px){ .loc-wrap{grid-template-columns:1fr;} }
+  .loc-left{display:flex; flex-direction:column; gap:1.4rem;}
+  .loc-head{display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;}
+  .loc-head h2{margin-bottom:0;}
+  .loc-thumb{width:100px; height:82px; border-radius:.6rem; overflow:hidden; border:3px solid var(--red); flex:none; box-shadow:0 8px 20px rgba(0,0,0,.4);}
+  .loc-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .loc-divider{width:64px; height:3px; background:var(--red); border-radius:2px;}
+  .loc-item{display:flex; align-items:center; gap:.9rem; padding-block:1rem; border-top:1px solid var(--line-dark); font-size:.95rem;}
+  .loc-item:first-of-type{border-top:none; padding-top:0;}
+  .loc-pin{width:34px; height:34px; border-radius:50%; background:var(--surface-2); display:grid; place-items:center; color:var(--red); flex:none;}
+  .loc-pin svg{width:18px; height:18px;}
+  .loc-wa-icon{
+    width:34px; height:34px; border-radius:50%; background:var(--whatsapp);
+    display:grid; place-items:center; color:#06210f; flex:none; position:relative;
+  }
+  .loc-wa-icon svg{width:17px; height:17px;}
+  .loc-wa-icon::before{
+    content:""; position:absolute; inset:-6px; border-radius:50%;
+    background:rgba(37,211,102,.4); filter:blur(4px); z-index:-1;
+    animation:waGlowPulse 2.2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .loc-wa-icon::before{animation:none;} }
+  @keyframes waGlowPulse{ 0%,100%{opacity:.5; transform:scale(.9);} 50%{opacity:1; transform:scale(1.18);} }
+  .loc-item a{color:var(--text-onink); font-weight:700; text-decoration:none;}
+  .loc-item a:hover{color:var(--red);}
+  .loc-map{border-radius:.8rem; overflow:hidden; border:1px solid var(--line-dark); min-height:320px;}
+  .loc-map iframe{width:100%; height:100%; min-height:320px; display:block; border:0;}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink); border-top:1px solid var(--line-dark); padding-block:2.5rem;}
@@ -522,26 +541,24 @@
 
 <section class="band band-ink" id="local">
   <div class="wrap">
-    <div class="eyebrow">Onde estamos</div>
-    <h2>Messejana, Fortaleza/CE</h2>
-    <div class="loc-photo"><img src="img/Design-sem-nome-21.webp" alt="Fachada da loja Messejana Pneus, com pneus expostos na calçada"></div>
-    <div class="loc-grid">
-      <div class="loc-panel">
-        <h3>Endereço</h3>
-        <div class="loc-row"><span>Rua</span><span>Estrada Barão de Aquiraz, 637</span></div>
-        <div class="loc-row"><span>Bairro</span><span>Messejana</span></div>
-        <div class="loc-row"><span>Cidade</span><span>Fortaleza — CE</span></div>
-        <div style="margin-top:1.2rem">
-          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Estrada%20Bar%C3%A3o%20de%20Aquiraz%2C%20637%2C%20Messejana%2C%20Fortaleza%20-%20CE">Abrir no Google Maps</a>
+    <div class="loc-wrap">
+      <div class="loc-left">
+        <div class="loc-head">
+          <h2>Onde<br>estamos</h2>
+          <div class="loc-thumb"><img src="img/Design-sem-nome-21.webp" alt="Fachada da loja Messejana Pneus"></div>
+        </div>
+        <div class="loc-divider"></div>
+        <div class="loc-item">
+          <span class="loc-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span>Estrada Barão de Aquiraz, 637 — Messejana, Fortaleza/CE</span>
+        </div>
+        <div class="loc-item">
+          <span class="loc-wa-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg></span>
+          <a class="wa-cta" data-msg="Olá, Atila! Vi o site da Messejana Pneus e quero falar com você." href="#">(85) 98680-7635</a>
         </div>
       </div>
-      <div class="loc-panel">
-        <h3>Horário de atendimento</h3>
-        <div class="loc-row"><span>Segunda a sexta</span><span>8h às 17h30</span></div>
-        <div class="loc-row"><span>Sábado</span><span>8h às 13h</span></div>
-        <div style="margin-top:1.2rem">
-          <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Vi o site da Messejana Pneus e quero falar com você." href="#">Chamar no WhatsApp</a>
-        </div>
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps?q=Estrada%20Bar%C3%A3o%20de%20Aquiraz%2C%20637%2C%20Messejana%2C%20Fortaleza%20-%20CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Localização da Messejana Pneus no Google Maps"></iframe>
       </div>
     </div>
   </div>
