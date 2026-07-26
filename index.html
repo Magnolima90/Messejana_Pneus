@@ -138,15 +138,7 @@
     position:relative; width:min(360px,82vw); aspect-ratio:4/5; border-radius:1rem; overflow:hidden;
     border:1px solid var(--line-dark); box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
   }
-  .hero-photo::before{
-    content:""; position:absolute; inset:-16%; z-index:-1; border-radius:1.4rem;
-    background:radial-gradient(circle, rgba(225,29,46,.4), transparent 68%);
-    filter:blur(6px);
-    animation: photoGlowPulse 2.6s ease-in-out infinite;
-  }
   .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
-  @media (prefers-reduced-motion: reduce){ .hero-photo::before{animation:none;} }
-  @keyframes photoGlowPulse{ 0%,100%{opacity:.55; transform:scale(.96);} 50%{opacity:1; transform:scale(1.04);} }
 
   /* ---------- diferenciais strip ---------- */
   .facts{
