@@ -170,6 +170,7 @@
     background:var(--red); color:#fff; font-size:.58rem; font-weight:700;
     letter-spacing:.08em; padding:.15rem 2.2rem; text-transform:uppercase;
   }
+  .price-card .aro-icon{width:52px; height:52px; margin:0 auto .5rem; display:block;}
   .price-card .aro{font-size:.72rem; color:var(--text-onink-dim); text-transform:uppercase; letter-spacing:.1em;}
   .price-card .aro b{display:block; font-family:var(--font-display); font-size:1.9rem; color:var(--text-onink); letter-spacing:0;}
   .price-card .from{font-size:.68rem; color:var(--text-onink-dim); margin-top:.5rem;}
@@ -252,6 +253,20 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="miniRimGrad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#f2f4f5"/>
+      <stop offset="45%" stop-color="#c3c8cd"/>
+      <stop offset="100%" stop-color="#6b7075"/>
+    </radialGradient>
+    <radialGradient id="miniHubGrad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ff5b68"/>
+      <stop offset="100%" stop-color="#a11421"/>
+    </radialGradient>
+  </defs>
+</svg>
+
 <header>
   <div class="header-inner">
     <div class="logo">
@@ -317,11 +332,11 @@
       <span class="dim">Valores ilustrativos para este protótipo — a tabela real do Atila ainda não foi enviada.</span>
     </div>
     <div class="price-grid">
-      <div class="price-card"><span class="tag">Exemplo</span><div class="aro">Aro<b>13</b></div><div class="from">a partir de</div><div class="val">R$ 249,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 13." href="#">WhatsApp</a></div>
-      <div class="price-card"><span class="tag">Exemplo</span><div class="aro">Aro<b>14</b></div><div class="from">a partir de</div><div class="val">R$ 269,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 14." href="#">WhatsApp</a></div>
-      <div class="price-card"><span class="tag">Exemplo</span><div class="aro">Aro<b>15</b></div><div class="from">a partir de</div><div class="val">R$ 289,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 15." href="#">WhatsApp</a></div>
-      <div class="price-card"><span class="tag">Exemplo</span><div class="aro">Aro<b>16</b></div><div class="from">a partir de</div><div class="val">R$ 339,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 16." href="#">WhatsApp</a></div>
-      <div class="price-card"><span class="tag">Exemplo</span><div class="aro">Aro<b>17</b></div><div class="from">a partir de</div><div class="val">R$ 399,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 17." href="#">WhatsApp</a></div>
+      <div class="price-card"><span class="tag">Exemplo</span><svg class="aro-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b0c0d"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2b2e31" stroke-width="5" stroke-dasharray="4 3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#e11d2e" stroke-width="1.5"/><circle cx="32" cy="32" r="20" fill="url(#miniRimGrad)"/><g fill="#52585e"><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(0 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(72 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(144 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(216 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="9" fill="#1a1b1d" stroke="#3a3d40" stroke-width="1"/><circle cx="32" cy="32" r="5" fill="url(#miniHubGrad)"/></svg><div class="aro">Aro<b>13</b></div><div class="from">a partir de</div><div class="val">R$ 249,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 13." href="#">WhatsApp</a></div>
+      <div class="price-card"><span class="tag">Exemplo</span><svg class="aro-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b0c0d"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2b2e31" stroke-width="5" stroke-dasharray="4 3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#e11d2e" stroke-width="1.5"/><circle cx="32" cy="32" r="20" fill="url(#miniRimGrad)"/><g fill="#52585e"><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(0 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(72 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(144 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(216 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="9" fill="#1a1b1d" stroke="#3a3d40" stroke-width="1"/><circle cx="32" cy="32" r="5" fill="url(#miniHubGrad)"/></svg><div class="aro">Aro<b>14</b></div><div class="from">a partir de</div><div class="val">R$ 269,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 14." href="#">WhatsApp</a></div>
+      <div class="price-card"><span class="tag">Exemplo</span><svg class="aro-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b0c0d"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2b2e31" stroke-width="5" stroke-dasharray="4 3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#e11d2e" stroke-width="1.5"/><circle cx="32" cy="32" r="20" fill="url(#miniRimGrad)"/><g fill="#52585e"><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(0 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(72 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(144 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(216 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="9" fill="#1a1b1d" stroke="#3a3d40" stroke-width="1"/><circle cx="32" cy="32" r="5" fill="url(#miniHubGrad)"/></svg><div class="aro">Aro<b>15</b></div><div class="from">a partir de</div><div class="val">R$ 289,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 15." href="#">WhatsApp</a></div>
+      <div class="price-card"><span class="tag">Exemplo</span><svg class="aro-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b0c0d"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2b2e31" stroke-width="5" stroke-dasharray="4 3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#e11d2e" stroke-width="1.5"/><circle cx="32" cy="32" r="20" fill="url(#miniRimGrad)"/><g fill="#52585e"><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(0 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(72 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(144 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(216 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="9" fill="#1a1b1d" stroke="#3a3d40" stroke-width="1"/><circle cx="32" cy="32" r="5" fill="url(#miniHubGrad)"/></svg><div class="aro">Aro<b>16</b></div><div class="from">a partir de</div><div class="val">R$ 339,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 16." href="#">WhatsApp</a></div>
+      <div class="price-card"><span class="tag">Exemplo</span><svg class="aro-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b0c0d"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2b2e31" stroke-width="5" stroke-dasharray="4 3"/><circle cx="32" cy="32" r="22" fill="none" stroke="#e11d2e" stroke-width="1.5"/><circle cx="32" cy="32" r="20" fill="url(#miniRimGrad)"/><g fill="#52585e"><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(0 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(72 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(144 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(216 32 32)"/><rect x="29" y="10" width="6" height="12" rx="3" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="9" fill="#1a1b1d" stroke="#3a3d40" stroke-width="1"/><circle cx="32" cy="32" r="5" fill="url(#miniHubGrad)"/></svg><div class="aro">Aro<b>17</b></div><div class="from">a partir de</div><div class="val">R$ 399,90</div><a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu aro 17." href="#">WhatsApp</a></div>
     </div>
   </div>
 </section>
