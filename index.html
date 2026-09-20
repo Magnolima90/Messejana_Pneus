@@ -14,11 +14,47 @@
 <meta property="og:site_name" content="Messejana Pneus">
 <meta property="og:title" content="Messejana Pneus | Pneus novos, importados e remold em Fortaleza/CE">
 <meta property="og:description" content="Pneus nacionais, importados, remold e de moto, do aro 13 ao 20. Montagem, balanceamento e bicos grátis. Fale direto com o Atila no WhatsApp.">
-<meta property="og:image" content="img/atila-hero-2.png">
+<meta property="og:image" content="img/atila-hero-2.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Messejana Pneus | Pneus novos, importados e remold em Fortaleza/CE">
 <meta name="twitter:description" content="Pneus nacionais, importados, remold e de moto, do aro 13 ao 20. Montagem, balanceamento e bicos grátis. Fale direto com o Atila no WhatsApp.">
-<meta name="twitter:image" content="img/atila-hero-2.png">
+<meta name="twitter:image" content="img/atila-hero-2.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Messejana Pneus",
+  "image": "https://atilapneus.netlify.app/img/atila-hero-2.webp",
+  "url": "https://atilapneus.netlify.app/",
+  "telephone": "+5585986807635",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Estrada Barão de Aquiraz, 587",
+    "addressLocality": "Fortaleza",
+    "addressRegion": "CE",
+    "postalCode": "60871-165",
+    "addressCountry": "BR"
+  },
+  "areaServed": "Fortaleza, CE",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "17:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "08:00",
+      "closes": "13:00"
+    }
+  ],
+  "sameAs": ["https://www.instagram.com/atilasilva0/"]
+}
+</script>
 <style>
   :root{
     --ink:#0b0b0c;
@@ -300,6 +336,20 @@
   .loc-map{border-radius:.8rem; overflow:hidden; border:1px solid var(--line-dark); min-height:320px;}
   .loc-map iframe{width:100%; height:100%; min-height:320px; display:block; border:0;}
 
+  /* ---------- reviews ---------- */
+  .reviews-wrap{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.5rem;
+  }
+  .btn-google{
+    display:inline-flex; align-items:center; gap:.6rem; flex:none;
+    background:#fff; color:#141517; font-weight:700; font-size:.9rem;
+    padding:.85rem 1.4rem; border-radius:999px; text-decoration:none;
+    border:1px solid var(--line-light); box-shadow:0 10px 24px -14px rgba(0,0,0,.3);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-google:hover{transform:translateY(-1px); box-shadow:0 14px 28px -14px rgba(0,0,0,.4);}
+  .btn-google:focus-visible{outline:2px solid var(--red); outline-offset:2px;}
+
   /* ---------- footer ---------- */
   footer{background:var(--ink); border-top:1px solid var(--line-dark); padding-block:2.5rem;}
   .foot-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; align-items:flex-start;}
@@ -315,6 +365,30 @@
   }
   .sticky-cta .btn{width:100%; justify-content:center;}
   @media (max-width:720px){ .sticky-cta{display:block;} body{padding-bottom:4.2rem;} }
+
+  /* ---------- floating whatsapp button ---------- */
+  .floating-wa{
+    position:fixed; right:1.4rem; bottom:1.4rem; z-index:55;
+    display:flex; align-items:center; gap:.6rem;
+    background:linear-gradient(180deg,#33e881,var(--whatsapp) 55%,var(--whatsapp-deep));
+    color:#06210f; text-decoration:none; font-weight:800; font-size:.88rem;
+    padding:.75rem 1.1rem .75rem .75rem; border-radius:999px;
+    box-shadow:0 14px 30px -10px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .floating-wa:hover{transform:translateY(-2px) scale(1.03); box-shadow:0 18px 36px -10px rgba(0,0,0,.55);}
+  .floating-wa-icon{
+    width:2rem; height:2rem; border-radius:50%; background:#fff; color:var(--whatsapp-deep);
+    display:grid; place-items:center; flex:none; position:relative;
+  }
+  .floating-wa-icon svg{width:1.15rem; height:1.15rem;}
+  .floating-wa-icon::before{
+    content:""; position:absolute; inset:-6px; border-radius:50%;
+    background:rgba(37,211,102,.45); filter:blur(5px); z-index:-1;
+    animation:waGlowPulse 2.2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .floating-wa-icon::before{animation:none;} }
+  @media (max-width:720px){ .floating-wa{display:none;} }
 </style>
 </head>
 <body>
@@ -328,7 +402,7 @@
       <a class="icon-btn" href="https://www.instagram.com/atilasilva0/" target="_blank" rel="noopener" aria-label="Instagram do Atila">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
       </a>
-      <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais." href="#">
+      <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Vim%20pelo%20site%20da%20Messejana%20Pneus%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
         Chamar no WhatsApp
       </a>
@@ -343,7 +417,7 @@
       <h1>Pneu certo, <em>sem enrolação</em>, direto com o Atila</h1>
       <p class="lede dim">Pneus nacionais, importados e remold para carro e moto, do aro 13 ao 20. Montagem, balanceamento e bicos grátis. Fala direto com quem te atende na loja — sem robô, sem fila de espera.</p>
       <div class="hero-ctas">
-        <a class="btn btn-wa wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais sobre os pneus." href="#">
+        <a class="btn btn-wa wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais sobre os pneus." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Vim%20pelo%20site%20da%20Messejana%20Pneus%20e%20quero%20saber%20mais%20sobre%20os%20pneus." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
           Chamar no WhatsApp
         </a>
@@ -358,7 +432,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-photo"><img src="img/atila-hero-2.png" alt="Atila, da Messejana Pneus" style="object-position:center 20%"></div>
+      <div class="hero-photo"><img src="img/atila-hero-2.webp" alt="Atila, da Messejana Pneus" style="object-position:center 20%"></div>
     </div>
   </div>
 </section>
@@ -384,57 +458,57 @@
       <div class="price-track">
         <div class="price-card">
           <div class="price-photo">
-            <img class="aro-photo" src="img/pneu-autogreen-195-55r15.jpg" alt="Pneu Autogreen Smart Chaser SC1 195/55 R15">
+            <img class="aro-photo" src="img/pneu-autogreen-195-55r15.webp" alt="Pneu Autogreen Smart Chaser SC1 195/55 R15">
             <div class="badge-row"><div class="badge">PNEUS<br><b>NOVOS</b></div></div>
           </div>
           <div class="price-info">
             <div class="aro">195/55 R15</div>
             <div class="from">Autogreen Smart Chaser SC1</div>
-            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Autogreen Smart Chaser SC1 195/55 R15." href="#">Chamar no WhatsApp</a>
+            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Autogreen Smart Chaser SC1 195/55 R15." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20saber%20mais%20sobre%20o%20pneu%20Autogreen%20Smart%20Chaser%20SC1%20195%2F55%20R15." target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
         <div class="price-card">
           <div class="price-photo">
-            <img class="aro-photo" src="img/pneu-maxtrek-185-65r15.jpg" alt="Pneu Maxtrek Maximus M2 185/65 R15">
+            <img class="aro-photo" src="img/pneu-maxtrek-185-65r15.webp" alt="Pneu Maxtrek Maximus M2 185/65 R15">
             <div class="badge-row"><div class="badge">PNEUS<br><b>NOVOS</b></div></div>
           </div>
           <div class="price-info">
             <div class="aro">185/65 R15</div>
             <div class="from">Maxtrek Maximus M2</div>
-            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Maxtrek Maximus M2 185/65 R15." href="#">Chamar no WhatsApp</a>
+            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Maxtrek Maximus M2 185/65 R15." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20saber%20mais%20sobre%20o%20pneu%20Maxtrek%20Maximus%20M2%20185%2F65%20R15." target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
         <div class="price-card">
           <div class="price-photo">
-            <img class="aro-photo" src="img/pneu-magnum-205-70r15.jpg" alt="Pneu Magnum Harmonic MGM226 205/70 R15">
+            <img class="aro-photo" src="img/pneu-magnum-205-70r15.webp" alt="Pneu Magnum Harmonic MGM226 205/70 R15">
             <div class="badge-row"><div class="badge">PNEUS<br><b>NOVOS</b></div></div>
           </div>
           <div class="price-info">
             <div class="aro">205/70 R15</div>
             <div class="from">Magnum Harmonic MGM226</div>
-            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Magnum Harmonic MGM226 205/70 R15." href="#">Chamar no WhatsApp</a>
+            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Magnum Harmonic MGM226 205/70 R15." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20saber%20mais%20sobre%20o%20pneu%20Magnum%20Harmonic%20MGM226%20205%2F70%20R15." target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
         <div class="price-card">
           <div class="price-photo">
-            <img class="aro-photo" src="img/pneu-dovroad-lt235-75r15.jpg" alt="Pneu Dovroad Ranch Spectra AT LT235/75 R15">
+            <img class="aro-photo" src="img/pneu-dovroad-lt235-75r15.webp" alt="Pneu Dovroad Ranch Spectra AT LT235/75 R15">
             <div class="badge-row"><div class="badge">PNEUS<br><b>NOVOS</b></div></div>
           </div>
           <div class="price-info">
             <div class="aro">LT235/75 R15</div>
             <div class="from">Dovroad Ranch Spectra AT</div>
-            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Dovroad Ranch Spectra AT LT235/75 R15." href="#">Chamar no WhatsApp</a>
+            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Dovroad Ranch Spectra AT LT235/75 R15." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20saber%20mais%20sobre%20o%20pneu%20Dovroad%20Ranch%20Spectra%20AT%20LT235%2F75%20R15." target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
         <div class="price-card">
           <div class="price-photo">
-            <img class="aro-photo" src="img/pneu-wanli-265-60r18.jpg" alt="Pneu Wanli SUV06 265/60 R18">
+            <img class="aro-photo" src="img/pneu-wanli-265-60r18.webp" alt="Pneu Wanli SUV06 265/60 R18">
             <div class="badge-row"><div class="badge">PNEUS<br><b>NOVOS</b></div></div>
           </div>
           <div class="price-info">
             <div class="aro">265/60 R18</div>
             <div class="from">Wanli SUV06</div>
-            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Wanli SUV06 265/60 R18." href="#">Chamar no WhatsApp</a>
+            <a class="btn btn-wa btn-sm wa-cta" data-msg="Olá, Atila! Quero saber mais sobre o pneu Wanli SUV06 265/60 R18." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20saber%20mais%20sobre%20o%20pneu%20Wanli%20SUV06%20265%2F60%20R18." target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -485,9 +559,9 @@
 <section class="band band-white about">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <video autoplay muted loop playsinline controls preload="metadata" poster="img/atila.jpg" aria-label="Vídeo de Atila, vendedor da Messejana Pneus">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="img/atila.webp" aria-label="Vídeo de Atila, vendedor da Messejana Pneus">
         <source src="video/messejana-pneus.mp4" type="video/mp4">
-        <img src="img/atila.jpg" alt="Atila, vendedor da Messejana Pneus">
+        <img src="img/atila.webp" alt="Atila, vendedor da Messejana Pneus">
       </video>
     </div>
     <div>
@@ -525,6 +599,10 @@
         <p>Incluídos na compra do pneu, evitando furos e perda de calibragem.</p>
       </div>
     </div>
+    <a class="btn btn-wa wa-cta" style="margin-top:1.5rem" data-msg="Olá, Atila! Quero agendar montagem e balanceamento na Messejana Pneus." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Quero%20agendar%20montagem%20e%20balanceamento%20na%20Messejana%20Pneus." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
+      Agendar montagem no WhatsApp
+    </a>
   </div>
 </section>
 
@@ -566,13 +644,32 @@
         </div>
         <div class="loc-item">
           <span class="loc-wa-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg></span>
-          <a class="wa-cta" data-msg="Olá, Atila! Vi o site da Messejana Pneus e quero falar com você." href="#">(85) 98680-7635</a>
+          <a class="wa-cta" data-msg="Olá, Atila! Vi o site da Messejana Pneus e quero falar com você." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Vi%20o%20site%20da%20Messejana%20Pneus%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener">(85) 98680-7635</a>
         </div>
       </div>
       <div class="loc-map">
         <iframe src="https://www.google.com/maps?q=Estr.%20Bar%C3%A3o%20de%20Aquiraz%2C%20587%2C%20Messejana%2C%20Fortaleza%20-%20CE%2C%2060871-165&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Localização da Messejana Pneus no Google Maps"></iframe>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band band-paper">
+  <div class="wrap reviews-wrap">
+    <div>
+      <div class="eyebrow">Confiança</div>
+      <h2>O que dizem sobre a gente</h2>
+      <p class="dim" style="max-width:48ch">Nossa reputação está no Google, aberta pra qualquer um ver. Confira as avaliações reais de quem já comprou pneu com a gente — ou deixe a sua.</p>
+    </div>
+    <a class="btn-google" href="https://www.google.com/maps/search/?api=1&query=Messejana+Pneus+Estr.+Bar%C3%A3o+de+Aquiraz%2C+587%2C+Messejana%2C+Fortaleza+-+CE%2C+60871-165" target="_blank" rel="noopener">
+      <svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true">
+        <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/>
+        <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+        <path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.6 5.1C9.6 39.6 16.3 44 24 44z"/>
+        <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l6.6 5.6C39.9 37 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/>
+      </svg>
+      Ver avaliações no Google
+    </a>
   </div>
 </section>
 
@@ -591,11 +688,16 @@
 </footer>
 
 <div class="sticky-cta">
-  <a class="btn btn-wa wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais." href="#">
+  <a class="btn btn-wa wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero saber mais." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Vim%20pelo%20site%20da%20Messejana%20Pneus%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
     Chamar no WhatsApp
   </a>
 </div>
+
+<a class="floating-wa wa-cta" data-msg="Olá, Atila! Vim pelo site da Messejana Pneus e quero falar com você agora." href="https://wa.me/5585986807635?text=Ol%C3%A1%2C%20Atila%21%20Vim%20pelo%20site%20da%20Messejana%20Pneus%20e%20quero%20falar%20com%20voc%C3%AA%20agora." target="_blank" rel="noopener" aria-label="Falar com o Atila no WhatsApp">
+  <span class="floating-wa-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.3 1.2-1.9 1.3-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.6.8 2 .9 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.8 1.3 1.8 2.1 1.2 1.1 2.2 1.4 2.6 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg></span>
+  <span class="floating-wa-text">Fale com o Atila</span>
+</a>
 
 <script>
   var WA_NUMBER = "5585986807635";
